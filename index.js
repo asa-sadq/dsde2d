@@ -19,7 +19,7 @@ const request = require('request');
 const dateFormat = require('dateformat');
 /////////////
 var meesage;
-const prefix = "+" // هنا تحط البرافيكس
+const prefix = "!" // هنا تحط البرافيكس
 const admin = prefix
 const developers = ["677617214668537877", "", ""]
 ///////////////
@@ -518,46 +518,45 @@ client.on("message", message => {
   if (command == prefix + "help") {
     let embed = new Discord.RichEmbed()
       .setDescription(` Projections
-limitbans+
-limitkicks=
-limitroleDelete+
-limitroleCreate+
-limitchannelDelete
-limittime+
+limitbans!
+limitkicks!
+limitroleDelete!
+limitroleCreate!
+limitchannelDelete!
+limittime!
 antibots off/on
-antilink on/off  kick+
+antilink on/off  kick!
 Adminstrative
-ban+
-lock+
-unlock+
-move+
-role+
-roleremove +
-give all +
-give humans+
-give bots +
-cle +
-clear +
-mute + 
-unmute +
-unban+
-uptime+
-allbots+
-setnick+
-ct+
-cv+
-setLog+
-autorole+
-infoautorole+
+ban!
+lock!
+unlock!
+move!
+role!
+roleremove !
+give all !
+give humans!
+give bots!
+cle !
+clear !
+mute ! 
+unmute!
+unban!
+uptime!
+allbots!
+setnick!
+ct!
+cv!
+setLog!
+autorole!
+infoautorole!
 General
-permsbot+
-user+
-roles+
-server+
-roleinfo+
-members+
-report+
-top+`)
+permsbot!
+user!
+server!
+roleinfo!
+members!
+report!
+top!`)
     message.channel.send(embed);
   }
 });
@@ -1056,7 +1055,7 @@ client.on('message', message => {
 
 const rWlc = JSON.parse(fs.readFileSync("./AutoRole.json", "utf8"));
 client.on('message', message => {
-  var prefix = "+";//البرفكس
+  var prefix = "!";//البرفكس
   if (message.channel.type === "dm") return;
   if (message.author.bot) return;
   if (!rWlc[message.guild.id]) rWlc[message.guild.id] = {
@@ -1264,7 +1263,7 @@ client.on("message", async function(message) {
 
 
 client.on('message', message => {
-  if (message.content.startsWith("+botinfo")) {
+  if (message.content.startsWith("!botinfo")) {
     message.channel.send({
       embed: new Discord.RichEmbed()
         .setAuthor(client.user.username, client.user.avatarURL)
@@ -1334,7 +1333,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-  if (message.content === "+server") {
+  if (message.content === "!server") {
     if (!message.channel.guild) return
     var verificationLevel = message.guild.verificationLevel;
     const verificationLevels = ['None', 'Low', 'Meduim', 'High', 'Extreme'];
@@ -1385,7 +1384,7 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-  if (message.content.startsWith('+members')) {
+  if (message.content.startsWith('!members')) {
     let pages = [`**Members info 
 :green_heart: online:   ${message.guild.members.filter(m => m.presence.status == 'online').size}
 :heart:  dnd:       ${message.guild.members.filter(m => m.presence.status == 'dnd').size}
